@@ -131,7 +131,7 @@ body {
 	height: 100%;
 }
 
-/* bottom effects */
+/* bottom and top effects */
 .wrapper.bottom {
 	width: 100%;
 	bottom: 0;
@@ -182,18 +182,106 @@ body {
 	opacity: 1;
 	transform: translateX(0);
 }
-
 .wrapper.top {
 	width: 100%;
 	top: 0;
 	left: 0;
 	padding: 5%;
 }
-.wrapper.left {
-
-}
+/* left and right effects */
 .wrapper.right {
+	width: 60%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	padding: 5%;
+}
+.right .heading,
+.left .heading {
+	transition: all 0.4s ease;
+	padding: 5%;
+	background-color: rgba(0,0,0,0.5);
+	font-size: 32px;
+	text-align: center;
+}
+.popeye-modal .background:hover .right .heading,
+.popeye-modal .background:hover .left .heading {
+	font-size: 24px;
+	padding: 0;
+	background-color: transparent;
+}
+.popeye-modal .background:hover .right .heading {
+	text-align: right;
+}
+.right .caption,
+.left .caption {
+	position: relative;
+	text-align: right;
+	transition: all 0.4s ease;
+	transition-delay: 0.4s;
+	opacity: 0;
+	transform: translateX(100%);
+}
+.popeye-modal .right .caption,
+.popeye-modal .left .caption {
+	margin-top: 0.5em; /* override */
+}
+.right .caption {
+	padding-right: 1em;
+}
+.popeye-modal .background:hover .right .caption,
+.popeye-modal .background:hover .left .caption {
+	opacity: 1;
+	transform: translateX(0);
+}
+.right .caption:after,
+.left .caption:before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 2px;
+	top: 0;
+	background-color: white;
+	transition: all 0.4s ease-out;
+	transition-delay: 0.6s;
+	opacity: 0;
+	height: 0;
+}
+.right .caption:after {
+	right: 0.5em;
+}
+.popeye-modal .background:hover .right .caption:after,
+.popeye-modal .background:hover .left .caption:before {
+	opacity: 1;
+	height: 100%;
+}
 
+.wrapper.left {
+	width: 60%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	padding: 5%;
+}
+.popeye-modal .background:hover .left .heading {
+	text-align: left;
+}
+.left .caption {
+	padding-left: 1em;
+	text-align: left;
+	transform: translateX(-100%);
+}
+.left .caption:before {
+	left: 0.5em;
+	background-color: white;
+	transition: all 0.4s ease-out;
+	transition-delay: 0.6s;
+	opacity: 0;
+	height: 0;
+}
+.popeye-modal .background:hover .left .caption:before {
+	opacity: 1;
+	height: 100%;
 }
 
 .popeye-modal .heading,

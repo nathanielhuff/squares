@@ -8,7 +8,7 @@
       src: 'img/eat-breakfast.png',
       heading: 'Eat breakfast',
       caption: 'Had some yogurt with granola, nuts, and berries.',
-      position: 'top',
+      position: 'left',
       square: true,
       added: false
     },
@@ -16,7 +16,7 @@
       src: 'img/hike.jpg',
       heading: 'Take a hike',
       caption: 'Hiked to one of my favorite views to catch the sunset.',
-      position: '',
+      position: 'left',
       square: true,
       added: false
     },
@@ -40,7 +40,7 @@
       src: 'img/walk-dog-1.jpg',
       heading: 'Walk the dog',
       caption: 'I did not have a dog so I had to borrow one.',
-      position: '',
+      position: 'right',
       square: true,
       added: false
     },
@@ -48,7 +48,7 @@
       src: 'img/wear-sunscreen.jpg',
       heading: 'Wear sunscreen',
       caption: 'I am way too used to this.',
-      position: '',
+      position: 'right',
       square: true,
       added: false
     },
@@ -80,7 +80,7 @@
       src: 'img/park-backlot.jpg',
       heading: 'Park in the back of the lot',
       caption: 'Probably the easiest of these ones.',
-      position: '',
+      position: 'right',
       square: true,
       added: false
     },
