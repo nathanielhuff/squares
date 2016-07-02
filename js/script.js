@@ -242,9 +242,11 @@
                   icon.setAttribute('src', 'img/icon/expand.png');
                   icon.classList.add('expand');
 
+                  // add img and icon to wrapper
                   wrapper.appendChild(img);
                   wrapper.appendChild(icon);
-                  //subSquares[i].appendChild(img);
+                  
+                  // add wrapper to the square along with other data + styles
                   subSquares[i].appendChild(wrapper);
                   subSquares[i].style['background'] = 'none';
                   subSquares[i].setAttribute('data-image-index', j);
@@ -265,7 +267,7 @@
               var modal = Popeye.openModal({
                 template: [
                   '<div class="background">',
-                    '<img src="' + IMAGES[imgIdx].src + '">',
+                    '<img src="' + IMAGES[imgIdx].src + '" alt="' + IMAGES[imgIdx].heading + '">',
                     '<div class="wrapper ' + (IMAGES[imgIdx].position || 'bottom') + '">',
                       '<div class="text">',
                         '<h2 class="heading">',
@@ -280,13 +282,15 @@
                 ].join('')
               });
               
-              modal.resolved.then(function() {
+              /*  if we need to do stuff after the modal is opened or closed...
+                modal.resolved.then(function() {
+                  
+                });
                 
-              });
-              
-              modal.closed.then(function() {
-                
-              });
+                modal.closed.then(function() {
+                  
+                });
+              */
             });
           }
         });
