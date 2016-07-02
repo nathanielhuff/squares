@@ -31,14 +31,175 @@ html, body {
 
 body {
 	padding: 2.5%;
-	background-color: #222;
+	background-color: #0a0a0a;
 }
 
 #square {
 	position: relative;
-	background-color: #555;
+	// background-color: #555;
 }
 
 .sub-square {
 	position: absolute;
+	border: 2px solid #0a0a0a;
+	overflow: hidden;
+	cursor: pointer;
+}
+.thumbnail {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.sub-square .wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.expand {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+.thumbnail, .expand {
+	transition: 0.4s all ease;
+}
+.sub-square:hover .thumbnail {
+	opacity: 0.333;
+	transform: scale(1.15);
+}
+.sub-square:hover .expand {
+	opacity: 1;
+}
+
+/* overrides */
+.popeye-modal-container .popeye-modal {
+	border-radius: 0;
+	padding: 2.5%;
+}
+.popeye-modal-container .popeye-modal a.popeye-close-modal {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    top: 0;
+    right: 0;
+    background-color: firebrick;
+    z-index: 100;
+    color: white;
+}
+.popeye-modal a.popeye-close-modal {
+	transition: 0.4s all ease;
+}
+.popeye-modal a.popeye-close-modal:hover {
+	color: firebrick;
+	background-color: white;
+}
+.popeye-modal-container .popeye-modal a.popeye-close-modal:after,
+.popeye-modal-container .popeye-modal a.popeye-close-modal::after {
+	content: "X";
+}
+/* background */
+.popeye-modal .background {
+	position: relative;
+	overflow: hidden;
+	background-color: black;
+}
+
+.popeye-modal img {
+	display: block;
+	width: 100%;
+    height: 100%;
+	max-width: 100%;
+    max-height: 100%;
+    transition: 0.4s all ease-out;
+    opacity: 0.8;
+}
+.popeye-modal .background:hover img {
+	opacity: 0.333;
+	transform: scale(1.1);
+}
+
+.popeye-modal .wrapper {
+	position: absolute;
+}
+.text {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+/* bottom effects */
+.wrapper.bottom {
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	padding: 5%;
+}
+.bottom .text:before,
+.top .text:before {
+	content: '';
+	display: block;
+	position: absolute;
+    background-color: white;
+    width: 2px;
+    left: -2.5%;
+    transition: all 0.4s ease-out;
+    height: 0;
+    opacity: 0;
+}
+.popeye-modal .background:hover .bottom .text:before,
+.popeye-modal .background:hover .top .text:before {
+	height: 100%;
+	opacity: 1;
+}
+.bottom .heading,
+.top .heading {
+	transition: all 0.4s ease;
+	font-size: 32px;
+	padding: 2.5%;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+}
+.popeye-modal .background:hover .bottom .heading,
+.popeye-modal .background:hover .top .heading {
+	font-size: 24px;
+	padding: 0;
+    background-color: transparent;
+    text-align: left;
+}
+.bottom .caption,
+.top .caption {
+	transition: all 0.3s ease;
+	transition-delay: 0.4s;
+	opacity: 0;
+	transform: translateX(100%);
+}
+.popeye-modal .background:hover .bottom .caption,
+.popeye-modal .background:hover .top .caption {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.wrapper.top {
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding: 5%;
+}
+.wrapper.left {
+
+}
+.wrapper.right {
+
+}
+
+.popeye-modal .heading,
+.popeye-modal .caption {
+	margin: 0;
+	font-family: 'Raleway', Arial, sans-serif;
+	text-transform: uppercase;
+	color: white;
 }
